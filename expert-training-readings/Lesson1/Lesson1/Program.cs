@@ -4,11 +4,15 @@ namespace Lesson1
 {
     class MainClass
     {
-        private const double TAX = 1.08;
+        private enum DayOfWeek { Sun, Mon, Tue, Wed, Thu, Fri, Sat }
 
         public static void Main(string[] args)
         {
-            Console.WriteLine(100 * TAX);
+            DayOfWeek mon = DayOfWeek.Mon;
+            if(mon == DayOfWeek.Mon)
+            {
+                Console.WriteLine("月曜日です");
+            }
         }
     }
 }
