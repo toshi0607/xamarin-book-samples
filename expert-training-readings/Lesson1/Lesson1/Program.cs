@@ -4,15 +4,12 @@ namespace Lesson1
 {
     class MainClass
     {
-        private enum DayOfWeek { Sun, Mon, Tue, Wed, Thu, Fri, Sat }
-
         public static void Main(string[] args)
         {
-            DayOfWeek mon = DayOfWeek.Mon;
-            if(mon == DayOfWeek.Mon)
-            {
-                Console.WriteLine("月曜日です");
-            }
+            Console.WriteLine("氏名を入力してください");
+
+            string strName = Console.ReadLine();
+            Console.WriteLine($"こんにちは{strName}さん"); 
         }
     }
 }
