@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:StartXamarin" x:Class="StartXamarin.StartXamarinPage">
-	<StackLayout x:Name="text1" Text="文字を入力してください" />
-    <Entry x:Name="entry1" Text="" />
-    <Button x:Name="btn1" Text="クリック！">
-        <Button.Treiggers>
-            <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference entry1}, Path=Text.Length}" Value="0">
-                <Setter Property="IsEnabled" Value="False" />
-            </DataTrigger>
-        </Button.Treiggers>
-    </Button>
+	<StackLayout>
+        <Label x:Name="text1" Text="文字を入力してください" />
+        <Entry x:Name="entry1" Text="" />
+        <Button x:Name="btn1" Text="クリック！">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference entry1}, Path=Text.Length}" Value="0">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+    </StackLayout>
 </ContentPage>
