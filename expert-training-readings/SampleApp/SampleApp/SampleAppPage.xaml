@@ -9,6 +9,7 @@
                     <Label.TextColor>Black</Label.TextColor>
                     <Label.Text>Hello, Sample App!</Label.Text>
                 </Label>
+                <Button x:Name="SampleButton1" Text="ボタン1" BackgroundColor="Blue" TextColor="Black"/>
                 <Button x:Name="SampleButton2" Text="ボタン2" BackgroundColor="Red" TextColor="Black"/>
             </StackLayout>
         </ContentPage>
