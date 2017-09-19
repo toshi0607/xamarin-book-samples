@@ -13,5 +13,26 @@
                 <Button x:Name="SampleButton2" Text="ボタン2" BackgroundColor="Red" TextColor="Black"/>
             </StackLayout>
         </ContentPage>
+        <ContentPage Title="タブ2" Padding="20">
+            <Grid Padding="10,30,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="アカウント" Grid.Row="0" Grid.Column="0" />
+                <Entry x:Name="entryAccount" Placeholder="enter Account..." Grid.Row="0" Grid.Column="1" />
+                <Label Text="パスワード" Grid.Row="1" Grid.Column="0" />
+                <Entry x:Name="entryPassword" IsPassword="true" Placeholder="enter Password..." Grid.Row="1" Grid.Column="1" />
+                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+                    <Button x:Name="Authentication" Text="認証" Margin="0,0,10,0" HorizontalOptions="CenterAndExpand" />
+                    <Button x:Name="Clear" Text="クリア" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Grid>
+        </ContentPage>
     </TabbedPage.Children>
 </TabbedPage>
