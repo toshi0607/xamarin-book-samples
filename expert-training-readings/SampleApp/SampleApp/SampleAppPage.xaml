@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SampleApp" x:Class="SampleApp.SampleAppPage">
+	<TabbedPage.Children>
+        <ContentPage Title="タブ1" Padding="20">
+            <StackLayout Padding="20" Spacing="15" BackgroundColor="White">
+                <Label Text="Hello, Sample App!" BackgroundColor="Aqua" TextColor="Black"/>
+                <Label>
+                    <Label.BackgroundColor>Aqua</Label.BackgroundColor>
+                    <Label.TextColor>Black</Label.TextColor>
+                    <Label.Text>Hello, Sample App!</Label.Text>
+                </Label>
+                <Button x:Name="SampleButton2" Text="ボタン2" BackgroundColor="Red" TextColor="Black"/>
+            </StackLayout>
+        </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>
