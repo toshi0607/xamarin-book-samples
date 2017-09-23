@@ -42,6 +42,16 @@ namespace SampleApp
                 entryAccount.Text = "";
                 entryPassword.Text = "";
             };
+
+            searchBar.SearchButtonPressed += (sender, e) =>
+            {
+                lblResult.Text = "SampleApp Search!";
+            };
+
+            searchBar.TextChanged += (sender, e) =>
+            {
+                lblResult.Text = string.Empty;
+            };
         }
     }
 }
