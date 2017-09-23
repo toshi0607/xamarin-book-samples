@@ -41,5 +41,25 @@
                 <Label x:Name="lblResult" TextColor="Black" />
             </StackLayout>
         </ContentPage>
+        <ContentPage Title="タブ4" Padding="20">
+            <StackLayout Padding="20" Spacing="15" BackgroundColor="White">
+                <Label Text="OnPlatform Color Check!">
+                    <Label.TextColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <OnPlatform.iOS>Blue</OnPlatform.iOS>
+                            <OnPlatform.Android>Blue</OnPlatform.Android>
+                        </OnPlatform>
+                    </Label.TextColor>
+                </Label>
+                <Label TextColor="Black">
+                    <Label.Text>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>iOS!</OnPlatform.iOS>
+                            <OnPlatform.Android>Android!</OnPlatform.Android>
+                        </OnPlatform> 
+                    </Label.Text>
+                </Label> 
+            </StackLayout>
+        </ContentPage> 
     </TabbedPage.Children>
 </TabbedPage>
