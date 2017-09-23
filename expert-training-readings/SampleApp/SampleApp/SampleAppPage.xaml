@@ -34,5 +34,12 @@
                 </StackLayout>
             </Grid>
         </ContentPage>
+        <ContentPage Title="タブ3" Padding="20">
+            <StackLayout Padding="20" Spacing="15" BackgroundColor="White">
+                <SearchBar x:Name="searchBar" Placeholder="Keyword" CancelButtonColor="Red" TextColor="Black" />
+                <Label Text="検索結果：" FontSize="Small" FontAttributes="Bold" TextColor="Black" />
+                <Label x:Name="lblResult" TextColor="Black" />
+            </StackLayout>
+        </ContentPage>
     </TabbedPage.Children>
 </TabbedPage>
