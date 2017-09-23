@@ -8,7 +8,7 @@ namespace AdressSearchApp
         {
             InitializeComponent();
 
-            MainPage = new AdressSearchAppPage();
+            MainPage = new NavigationPage(new AddressSearch());
         }
 
         protected override void OnStart()

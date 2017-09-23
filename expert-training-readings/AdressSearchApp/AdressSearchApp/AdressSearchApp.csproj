@@ -30,6 +30,9 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="AdressSearchAppPage.xaml" />
+    <EmbeddedResource Include="AddressSearch.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -42,6 +45,9 @@
     <Compile Include="Address.cs" />
     <Compile Include="HttpService.cs" />
     <Compile Include="Core.cs" />
+    <Compile Include="AddressSearch.xaml.cs">
+      <DependentUpon>AddressSearch.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
