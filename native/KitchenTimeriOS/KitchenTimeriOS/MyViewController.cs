@@ -1,5 +1,6 @@
 using Foundation;
 using System;
+using System.Threading;
 using UIKit;
 
 namespace KitchenTimeriOS
@@ -8,6 +9,7 @@ namespace KitchenTimeriOS
     {
         private TimeSpan _remainingTime = new TimeSpan(0);
         private bool _isStart = false;
+        private Timer _timer;
 
         public MyViewController (IntPtr handle) : base (handle)
         {
@@ -45,8 +47,15 @@ namespace KitchenTimeriOS
             };
 
             StartButton.TouchUpInside += StartButton_TouchUpInside;
-        }
 
+            ClearButton.TouchUpInside += (sender, e) => 
+            {
+                _remainingTime = new TimeSpan(0);
+                ShowRemainingTime();
+            };
+
+            _timer = new Timer(Timer_OnTick, null, 0, 100);
+        }
 
         private void SetButtonBorder(UIButton button)
         {
@@ -66,7 +75,7 @@ namespace KitchenTimeriOS
             RemainingTimeLabel.Text = string.Format("{0:f0}:{1:d2}", _remainingTime.TotalMinutes, _remainingTime.Seconds);
         }
 
-        void StartButton_TouchUpInside(object sender, EventArgs e)
+        private void StartButton_TouchUpInside(object sender, EventArgs e)
         {
             _isStart = !_isStart;
             if (_isStart)
@@ -77,6 +86,29 @@ namespace KitchenTimeriOS
             {
                 StartButton.SetTitle("スタート", UIControlState.Normal);
             }
+        }
+
+        private void Timer_OnTick(object state)
+        {
+            if (!_isStart)
+            {
+                return;
+            }
+
+            InvokeOnMainThread(() =>
+            {
+                _remainingTime = _remainingTime.Add(TimeSpan.FromMilliseconds(-100));
+
+                if (_remainingTime.TotalSeconds <= 0)
+                {
+                    _isStart = false;
+                    _remainingTime = new TimeSpan(0);
+                    StartButton.SetTitle("スタート", UIControlState.Normal);
+                    var sound = new AudioToolbox.SystemSound(1005);
+                    sound.PlayAlertSound();
+                }
+                ShowRemainingTime();
+            });
         }
     }
 }
