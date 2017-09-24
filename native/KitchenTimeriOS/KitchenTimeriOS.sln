@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenTimeriOS", "KitchenTimeriOS\KitchenTimeriOS.csproj", "{E1301D57-0402-4C98-8748-18E90A8E6D92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1301D57-0402-4C98-8748-18E90A8E6D92}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{E1301D57-0402-4C98-8748-18E90A8E6D92}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{E1301D57-0402-4C98-8748-18E90A8E6D92}.Release|iPhone.ActiveCfg = Release|iPhone
+		{E1301D57-0402-4C98-8748-18E90A8E6D92}.Release|iPhone.Build.0 = Release|iPhone
+		{E1301D57-0402-4C98-8748-18E90A8E6D92}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{E1301D57-0402-4C98-8748-18E90A8E6D92}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{E1301D57-0402-4C98-8748-18E90A8E6D92}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{E1301D57-0402-4C98-8748-18E90A8E6D92}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
