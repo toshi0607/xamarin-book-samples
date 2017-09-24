@@ -16,7 +16,7 @@ namespace SQLiteUserApp
                 ItemTemplate = new DataTemplate(typeof(TextCell))
             };
             wListView.ItemTemplate.SetBinding(TextCell.TextProperty, "Text");
-            wListView.ItemTemplate.SetBinding(TextCell.DetailProperty, new Binding("InsertDate", stringFormat: "{0:777/MM/dd hh:mm}"));
+            wListView.ItemTemplate.SetBinding(TextCell.DetailProperty, new Binding("InsertDate", stringFormat: "{0:yyy/MM/dd hh:mm}"));
 
             wListView.ItemTapped += async (s, a) =>
             {
@@ -91,4 +91,3 @@ namespace SQLiteUserApp
         }
     }
 }
-
