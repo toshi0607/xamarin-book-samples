@@ -20,14 +20,57 @@ namespace XMemo.iOS
                 Subject = "",
                 Text = ""
             };
+
+            SubjectText.EditingChanged += (s, e) =>
+            {
+                MemoHolder.Current.Memo.Subject = SubjectText.Text;
+            };
+
+            MemoText.Changed += (s, e) =>
+            {
+                MemoHolder.Current.Memo.Text = MemoText.Text;
+            };
+
+            SetupDatePicker();
         }
 
         private void DisplayMemo()
         {
             var memo = MemoHolder.Current.Memo;
-            DateText.Text = string.Format("{0:yyyy MMMMM dd/MM/dd", memo.Date);
+            DateText.Text = string.Format("{0:yyyy/MM/dd}", memo.Date);
             SubjectText.Text = memo.Subject;
             MemoText.Text = memo.Text;
+        }
+
+        private void SetupDatePicker()
+        {
+            var doneButton = new UIBarButtonItem("閉じる", UIBarButtonItemStyle.Done,
+                (sender, e) => { DateText.ResignFirstResponder(); });
+            var toolBar = new UIToolbar()
+            {
+                BarStyle = UIBarStyle.Default,
+                Translucent = true,
+                TintColor = null,
+            };
+            toolBar.SizeToFit();
+            toolBar.SetItems(new[]
+            {
+                new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
+                doneButton,
+            }, true);
+
+            var datePicker = new UIDatePicker()
+            {
+                Mode = UIDatePickerMode.Date,
+            };
+            datePicker.ValueChanged += (s, e) =>
+            {
+                MemoHolder.Current.Memo.Date = (DateTime)datePicker.Date;
+                DisplayMemo();
+            };
+
+            DateText.InputAccessoryView = toolBar;
+            DateText.InputView = datePicker;
         }
 
         public override void DidReceiveMemoryWarning()
