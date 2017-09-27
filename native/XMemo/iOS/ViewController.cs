@@ -6,8 +6,6 @@ namespace XMemo.iOS
 {
     public partial class ViewController : UIViewController
     {
-        int count = 1;
-
         public ViewController(IntPtr handle) : base(handle)
         {
         }
@@ -16,13 +14,20 @@ namespace XMemo.iOS
         {
             base.ViewDidLoad();
 
-            // Perform any additional setup after loading the view, typically from a nib.
-            Button.AccessibilityIdentifier = "myButton";
-            Button.TouchUpInside += delegate
+            MemoHolder.Current.Memo = new Memo()
             {
-                var title = string.Format("{0} clicks!", count++);
-                Button.SetTitle(title, UIControlState.Normal);
+                Date = DateTime.Now,
+                Subject = "",
+                Text = ""
             };
+        }
+
+        private void DisplayMemo()
+        {
+            var memo = MemoHolder.Current.Memo;
+            DateText.Text = string.Format("{0:yyyy MMMMM dd/MM/dd", memo.Date);
+            SubjectText.Text = memo.Subject;
+            MemoText.Text = memo.Text;
         }
 
         public override void DidReceiveMemoryWarning()
