@@ -32,6 +32,10 @@ namespace XMemo.iOS
             };
 
             SetupDatePicker();
+
+            SaveButton.TouchUpInside += SaveButton_TouchUpInside;
+
+            LoadButton.TouchUpInside += LoadButton_TouchUpInside;
         }
 
         private void DisplayMemo()
@@ -71,6 +75,16 @@ namespace XMemo.iOS
 
             DateText.InputAccessoryView = toolBar;
             DateText.InputView = datePicker;
+        }
+
+        private async void SaveButton_TouchUpInside(object sender, EventArgs e)
+        {
+            await MemoHolder.Current.SaveAsync();
+        }
+
+        private async void LoadButton_TouchUpInside(object sender, EventArgs e)
+        {
+            await MemoHolder.Current.LoadAsync();
         }
 
         public override void DidReceiveMemoryWarning()
