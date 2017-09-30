@@ -33,6 +33,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="App.cs" />
     <Compile Include="Models\Todo.cs" />
+    <Compile Include="Models\TodoHolder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
